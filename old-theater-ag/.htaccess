@@ -1,0 +1,9 @@
+AddDefaultCharset UTF-8
+Redirect 301 /theater-ag/theaterag_start.html /theater-ag/index.htm
+Redirect 301 /theater-ag/theaterag_kontakt.html /theater-ag/index.htm
+Redirect 301 /theater-ag/theaterag_aktuell.html /theater-ag/index.htm
+Redirect 301 /theater-ag/theaterag_archiv.html /theater-ag/index.htm
+Redirect 301 /theater-ag/univerbal_start.html /theater-ag/index.htm
+Redirect 301 /theater-ag/univerbal_kontakt.html /theater-ag/index.htm
+Redirect 301 /theater-ag/univerbal_aktuell.html /theater-ag/index.htm
+Redirect 301 /theater-ag/univerbal_archiv.html /theater-ag/index.htm
