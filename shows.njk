@@ -1,0 +1,15 @@
+---
+layout: base.njk
+title: Aufführungen
+---
+<h1>Aufführungen</h1>
+
+  {% for show in collections.shows %}
+  <div>
+    <h3>
+      <a href="{{ show.url | url }}">{{ show.data.title }}</a>
+    </h3>
+    <p class="date">{{ show.date | readableDate }}</p>
+    <p>{{ show.templateContent | striptags | truncate(200) }}...</p>
+  </div>
+  {% endfor %}

@@ -1,0 +1,43 @@
+---
+layout: base.njk
+title: Welcome to Our Theater Group
+---
+<h1>Theater AG der TUHH</h1>
+<p>Ja, die TU hat eine!</p>
+
+<h2>Plakat Platzhalter</h2>
+<img alt="Placeholder Plakat" src="{{ '/assets/placeholder_plakat.webp' | url }}" />
+
+<section>
+  <h2>Das wichtigste zuerst</h2>
+  <p>
+      <strong>Wann?</strong> Mittwochs 18:30 - 20:30 Uhr<br>
+      <strong>Wo?</strong> Audimax 2, Gebäude I<br>
+      <strong>Kontakt:</strong> <a href="mailto:theater-ag@tuhh.de">theater-ag@tuhh.de</a>
+  </p>
+</section>
+
+<section>
+  <h2>Was machen wir da?</h2>
+  <p>
+    Wir treffen uns wöchentlich und starten mit <strong>Aufwärmspielen</strong>, gefolgt von jeder Menge <strong>Improtheater</strong>. 
+    Dann geht's ans Eingemachte: Wir studieren ein <strong>Theaterstück</strong> ein und proben fleißig.
+    Vor der großen <strong>Aufführung</strong> am Semesterende steht noch eine gemeinsame <strong>Theaterfahrt</strong> an.
+    Ach ja, um <strong>Bühnenbild und Requisiten</strong> kümmern wir uns auch selbst, unterstützt von unseren Technik-Leuten.
+    Lust bekommen? Wir freuen uns immer über neue Gesichter!
+  </p>
+</section>
+
+<section>
+  <h2>Aktuelles</h2>
+  {% for article in collections.articles %}
+  <div>
+    <h3>
+      <a href="{{ article.url | url }}">{{ article.data.title }}</a>
+    </h3>
+    <p class="date">{{ article.date | readableDate }}</p>
+    <p>{{ article.templateContent | striptags | truncate(200) }}...</p>
+  </div>
+  {% endfor %}
+</section>
+

@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }} - {{ title }}</title>
-    <meta name="description" content="{{ description }}">
-    <link rel="stylesheet" href="{{ '/assets/style.css' | url }}">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ site.title }}</title>
+    <meta name="description" content="{{ description }}" />
+    <link rel="stylesheet" href="{{ '/assets/reset.css' | url }}" />
+    <link rel="stylesheet" href="{{ '/assets/style.css' | url }}" />
+  </head>
+  <body>
     <header>
-        <h1><a href="{{ '/' | url }}">{{ site.title }}</a></h1>
-        <nav>
-            <ul>
-                <li><a href="{{ '/' | url }}">Home</a></li>
-                <li><a href="{{ '/contact/' | url }}">Contact</a></li>
-            </ul>
-        </nav>
+      <a href="{{ '/'|url }}">
+        <img
+          alt="Theater-AG TUHH mascot"
+          class="logo"
+          src="{{ '/assets/chameleon_simple.png' | url }}"
+      /></a>
+      <nav>
+        <ul>
+          <li>
+            <a href="{{ '/shows'|url }}">Aufführungen</a>
+          </li>
+          <li>
+            <a href="{{ '/impressum'|url }}">Impressum</a>
+          </li>
+        </ul>
+      </nav>
     </header>
-
-    <main>
-        {{ content | safe }}
-    </main>
-
+    <main>{{ content | safe }}</main>
     <footer>
-        <p>© {{ "now" | date("YYYY") }} {{ site.title }}</p>
+      <a href="https://www.asta.tuhh.de/" target="_blank" rel="noopener noreferrer"><img alt="Asta Logo" src="{{ '/assets/asta.png' | url }}" /></a>
+      <p>Copyright © {% year %} - {{ site.title }}</p>
     </footer>
-</body>
+  </body>
 </html>

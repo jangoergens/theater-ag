@@ -19,6 +19,14 @@ module.exports = function (eleventyConfig) {
       });
   });
 
+  eleventyConfig.addCollection("shows", function (collectionApi) {
+    return collectionApi
+      .getFilteredByGlob("./shows/*.md")
+      .sort(function (a, b) {
+        return b.date - a.date;
+      });
+  });
+
   eleventyConfig.addFilter("readableDate", function (dateObj) {
     return new Date(dateObj).toLocaleDateString("en-US", {
       year: "numeric",
