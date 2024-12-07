@@ -9,16 +9,17 @@ header {
   display: flex;
   padding: 0.5rem;
   background-color: var(--color-background-primary);
-
-  .logo {
-    width: 10rem;
-  }
+  justify-content: center;
 
   nav {
     background-color: var(--color-background-primary);
     width: 100%;
+    max-width: 50rem;
     display: flex;
 
+    .logo {
+      width: 7rem;
+    }
     ul {
       display: flex;
       width: 100%;
@@ -46,6 +47,13 @@ article {
 
 main {
   padding: 1rem;
+  max-width: 60rem;
+  margin: auto;
+
+  .poster {
+    width: 20rem;
+    margin: auto;
+  }
 
   section {
     padding: 1rem 0;
