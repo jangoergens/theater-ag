@@ -44,5 +44,6 @@ module.exports = function (eleventyConfig) {
       data: "_data",
       output: "output",
     },
+    pathPrefix: "/theater-ag/",
   };
 };
