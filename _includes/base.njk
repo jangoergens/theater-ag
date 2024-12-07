@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }} - {{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <link rel="stylesheet" href="{{ '/assets/style.css' | url }}">
+</head>
+<body>
+    <header>
+        <h1><a href="{{ '/' | url }}">{{ site.title }}</a></h1>
+        <nav>
+            <ul>
+                <li><a href="{{ '/' | url }}">Home</a></li>
+                <li><a href="{{ '/contact/' | url }}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {{ content | safe }}
+    </main>
+
+    <footer>
+        <p>© {{ "now" | date("YYYY") }} {{ site.title }}</p>
+    </footer>
+</body>
+</html>
