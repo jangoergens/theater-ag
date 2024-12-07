@@ -1,8 +1,6 @@
 module.exports = function (eleventyConfig) {
-  // Copy assets folder
   eleventyConfig.addPassthroughCopy("assets");
 
-  // Markdown library
   const markdownIt = require("markdown-it");
   eleventyConfig.setLibrary(
     "md",
@@ -13,7 +11,6 @@ module.exports = function (eleventyConfig) {
     })
   );
 
-  // Articles collection (sorted by date)
   eleventyConfig.addCollection("articles", function (collectionApi) {
     return collectionApi
       .getFilteredByGlob("./articles/*.md")
@@ -22,13 +19,22 @@ module.exports = function (eleventyConfig) {
       });
   });
 
+  eleventyConfig.addFilter("readableDate", function (dateObj) {
+    return new Date(dateObj).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  });
+
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
   return {
     dir: {
       input: ".",
       includes: "_includes",
       data: "_data",
-      output: "_site/news", // Output to a subfolder
+      output: "output",
     },
-    pathPrefix: "/theater-ag/news/", // Important for correct URLs
   };
 };

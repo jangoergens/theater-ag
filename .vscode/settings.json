@@ -1,0 +1,10 @@
+{
+  "[markdown]": {
+    "editor.wordWrapColumn": 100,
+    "editor.wordWrap": "bounded"
+  },
+  "[nunjucks]": {
+    "editor.wordWrapColumn": 100,
+    "editor.wordWrap": "bounded"
+  }
+}

@@ -1,1 +1,1 @@
-# theater-ag
+# Theater AG
